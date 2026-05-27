@@ -1,20 +1,18 @@
-FROM jupyter/base-notebook:python-3.10
+FROM quay.io/fenicsproject/dev:latest
 
 USER root
 
-RUN apt-get update && apt-get install -y \
-    software-properties-common
+# Jupyter + plotting tools
+RUN pip3 install --no-cache-dir \
+    jupyterlab \
+    notebook \
+    matplotlib \
+    meshio \
+    ipykernel
 
-RUN add-apt-repository -y ppa:fenics-packages/fenics
+# Make sure notebooks are visible in Jupyter
+ENV JUPYTER_ENABLE_LAB=yes
 
-RUN apt-get update && apt-get install -y \
-    fenics \
-    python3-dolfin \
-    python3-mshr \
-    gmsh
+USER fenics
 
-RUN pip install matplotlib meshio
-
-USER ${NB_UID}
-
-WORKDIR /home/jovyan
+WORKDIR /home/fenics
