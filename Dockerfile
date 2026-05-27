@@ -1,11 +1,20 @@
-FROM quay.io/fenicsproject/dev:latest
+FROM jupyter/base-notebook:python-3.10
 
-RUN pip3 install matplotlib jupyter
+USER root
 
-WORKDIR /home/fenics/shared
+RUN apt-get update && apt-get install -y \
+    software-properties-common
 
-CMD ["jupyter", "notebook", \
-     "--ip=0.0.0.0", \
-     "--port=8888", \
-     "--no-browser", \
-     "--allow-root"]
+RUN add-apt-repository -y ppa:fenics-packages/fenics
+
+RUN apt-get update && apt-get install -y \
+    fenics \
+    python3-dolfin \
+    python3-mshr \
+    gmsh
+
+RUN pip install matplotlib meshio
+
+USER ${NB_UID}
+
+WORKDIR /home/jovyan
