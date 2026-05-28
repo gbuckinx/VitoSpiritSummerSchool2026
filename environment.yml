@@ -20,3 +20,4 @@ dependencies:
   - scipy=1.7.3
   - h5py
   - mshr=2019.1.0=py38h255090a_2
+  - superlu_dist
