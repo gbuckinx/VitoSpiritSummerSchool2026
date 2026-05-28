@@ -20,5 +20,3 @@ dependencies:
   - scipy=1.7.3
   - h5py
   - mshr=2019.1.0=py38h255090a_2
-  - pip:
-    - gmsh==4.9.0 #MG20220912: Apparently 4.6.0 is not available anymore?
