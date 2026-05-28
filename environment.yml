@@ -1,0 +1,24 @@
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - fenics=2019.1.0
+  - git=2.34.1
+  - ipywidgets=7.6.5
+  - itk=5.2.0
+  - itkwidgets=0.32.0
+  - jupyter=1.0.0
+  - jupyter_contrib_nbextensions=0.5.1
+  - jupyter_nbextensions_configurator=0.4.1
+  - jupyterlab=3.4.7
+  - matplotlib=3.5.1
+  - meshio=5.2.2
+  - notebook=6.4.3
+  - numpy=1.21.5
+  - pip
+  - python=3.8.12
+  - scipy=1.7.3
+  - h5py
+  - mshr=2019.1.0=py38h255090a_2
+  - pip:
+    - gmsh==4.9.0 #MG20220912: Apparently 4.6.0 is not available anymore?
