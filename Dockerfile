@@ -2,7 +2,7 @@ FROM quay.io/fenicsproject/dev:latest
 
 USER root
 
-# Jupyter + plotting tools
+# Install extra Python tools
 RUN pip3 install --no-cache-dir \
     jupyterlab \
     notebook \
@@ -10,11 +10,11 @@ RUN pip3 install --no-cache-dir \
     meshio \
     ipykernel
 
-# Make sure notebooks are visible in Jupyter
+# Enable JupyterLab
 ENV JUPYTER_ENABLE_LAB=yes
 
-USER fenics
-
 WORKDIR /home/fenics
+
+EXPOSE 8888
 
 CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root"]
