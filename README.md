@@ -1,4 +1,4 @@
-# `fenics-binder`: A repository to launch FEniCS within Binder
+# `fenics2019binder`: A repository to launch FEniCS within Binder
 
 ## Click on the Binder badge to launch
 
@@ -14,7 +14,5 @@
 
 ## Contact
 
-**Jeremy Bleyer** (jeremy.bleyer@enpc.fr) 
-
-Ecole des Ponts ParisTech, Laboratoire Navier (UMR 8205)
+**Geert Buckinx** (geert.buckinx@vito.be)
 
