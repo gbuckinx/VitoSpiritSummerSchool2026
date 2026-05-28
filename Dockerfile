@@ -16,3 +16,5 @@ ENV JUPYTER_ENABLE_LAB=yes
 USER fenics
 
 WORKDIR /home/fenics
+
+CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root"]
